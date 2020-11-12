@@ -1,7 +1,6 @@
 {
-  "name": "components-library",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@zanzer-tem/components-library",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -10,7 +9,9 @@
   "scripts": {
     "test": "jest",
     "storybook": "start-storybook -p 6006 -s public --no-dll",
-    "build-storybook": "build-storybook -s public --no-dll"
+    "build-storybook": "build-storybook -s public --no-dll",
+    "clean": "rimraf dist",
+    "compile": "npm run clean && cross-env NODE_ENV=production babel src/components --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
   "eslintConfig": {
     "extends": [
@@ -64,5 +65,8 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   }
 }
