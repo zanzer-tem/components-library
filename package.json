@@ -1,6 +1,6 @@
 {
   "name": "@zanzer-tem/components-library",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -64,9 +64,10 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
-    }
+    },
+    "roots":["src"]
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   }
 }
